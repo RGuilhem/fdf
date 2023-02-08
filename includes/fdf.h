@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/07 16:04:48 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/08 02:26:54 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,22 @@ typedef void	t_vec;
 typedef void	t_gui;
 typedef void	t_frame;
 
-// Map
-t_map	*map_create(const char *map_path);
-void	map_destroy(t_map *map);
+typedef void	t_matrtix;
 
-t_wf	*wf_create(int width, int height);
-void	wf_destroy(t_wf *wf);
+// Map
+t_map			*map_create(const char *map_path);
+void			map_destroy(t_map *map);
+
+t_wf			*wf_create(int width, int height);
+void			wf_destroy(t_wf *wf);
 
 // Vectors
-t_vec	*vec_create(int x, int y, int z);
-void	vec_destroy(t_vec *vec);
+t_vec			*vec_create(int x, int y, int z);
+void			vec_destroy(t_vec *vec);
 
 // mlx helpers
-void	put_pixel(t_frame *frame, int x, int y, int color);
-t_gui	*gui_create(int width, int height);
-void	gui_destroy(t_gui *gui);
+void			put_pixel(t_frame *frame, int x, int y, int color);
+t_gui			*gui_create(int width, int height);
+void			gui_destroy(t_gui *gui);
 
 #endif
