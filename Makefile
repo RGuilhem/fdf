@@ -3,6 +3,7 @@ FLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 SRC = main.c \
+	  read_lines.c \
 	  put_pixel.c
 SRC_DIR = $(addprefix src/, $(SRC))
 OBJ = ${SRC_DIR:.c=.o}

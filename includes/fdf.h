@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/08 02:26:54 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/10 12:53:50 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,11 @@ typedef void	t_frame;
 
 typedef void	t_matrtix;
 
+// File management
+char			**read_lines(const char *path);
+
 // Map
-t_map			*map_create(const char *map_path);
+t_map			*map_create(const char *map_lines);
 void			map_destroy(t_map *map);
 
 t_wf			*wf_create(int width, int height);
@@ -44,5 +47,6 @@ void			vec_destroy(t_vec *vec);
 void			put_pixel(t_frame *frame, int x, int y, int color);
 t_gui			*gui_create(int width, int height);
 void			gui_destroy(t_gui *gui);
+
 
 #endif
