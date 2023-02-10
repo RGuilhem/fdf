@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:14:30 by graux             #+#    #+#             */
-/*   Updated: 2023/02/07 15:53:41 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/10 14:10:46 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 typedef struct s_vec_
 {
-	int	x;
-	int	y;
-	int	z;
+	float	x;
+	float	y;
+	float	z;
 }				t_vec_;
 
 #endif
