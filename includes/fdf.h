@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/10 13:28:28 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/10 13:40:09 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ char			**read_lines(const char *path);
 t_map			*map_create(const char **map_lines);
 void			map_destroy(t_map *map);
 
-t_wf			*wf_create(int width, int height);
+// Wireframe (wf)
+t_wf			*wf_create(int point_width, int point_height);
 void			wf_destroy(t_wf *wf);
 
 // Vectors
