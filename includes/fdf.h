@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/13 10:54:13 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/13 15:13:26 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 
 //TODO projections
 //TODO user inputs
+
+# define WIN_HEIGHT 1080
+# define WIN_WIDTH 1920
+# define SETTINGS_WIDTH 400
+# define DEFAULT_ZOOM 10
+# define DEFAULT_X_ANGLE 0.78539816
+# define DEFAULT_Y_ANGLE 0.78539816
+# define DEFAULT_Z_ANGLE 0
 
 typedef void	t_map;
 typedef void	t_wf;
@@ -57,7 +65,7 @@ t_matrix		*matrix_roty_create(float angle);
 t_matrix		*matrix_rotz_create(float angle);
 t_matrix		*matrix_scale_create(float scale_factor);
 void			matrix_destroy(t_matrix *matrix);
-t_matrix		*matrix_multiply(t_matrix *a, t_matrix *b);
+//t_matrix		*matrix_multiply(t_matrix *a, t_matrix *b); TODO: not needed?
 
 // mlx helpers
 void			put_pixel(t_frame *frame, int x, int y, int color);
