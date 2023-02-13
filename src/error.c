@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 15:40:18 by graux             #+#    #+#             */
-/*   Updated: 2023/02/10 16:26:19 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/13 12:14:14 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ void	crash(t_err_ressource **ressources, int status)
 
 void	list_ress(t_err_ressource **ressources)
 {
+	(void) ressources;
 	ft_printf("TODO: implement list_ress\n");
 }
