@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/10 14:10:29 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/13 10:54:13 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,9 @@ void			vec_add(t_vec *a, t_vec *b);
 void			vec_multiply(t_vec *vec, t_matrix *matrix);
 
 // Matrixes
-t_matrix		*matrix_create(void);
-t_matrix		*matrix_rot_create(char *axis, float angle);
+t_matrix		*matrix_rotx_create(float angle);
+t_matrix		*matrix_roty_create(float angle);
+t_matrix		*matrix_rotz_create(float angle);
 t_matrix		*matrix_scale_create(float scale_factor);
 void			matrix_destroy(t_matrix *matrix);
 t_matrix		*matrix_multiply(t_matrix *a, t_matrix *b);
