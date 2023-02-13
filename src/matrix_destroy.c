@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   matrix_destroy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 14:55:29 by graux             #+#    #+#             */
-/*   Updated: 2023/02/13 14:52:56 by graux            ###   ########.fr       */
+/*   Created: 2023/02/13 14:53:39 by graux             #+#    #+#             */
+/*   Updated: 2023/02/13 14:56:11 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
-#include "../includes/_vec.h" //TODO remove
-#include "../includes/_matrix.h" //TODO remove
-#include <stdio.h>            //TODO remove
-#include <math.h>
+#include "../includes/_matrix.h"
+#include <stdlib.h>
 
-int	main(int argc, char *argv[])
+void	matrix_destroy(t_matrix *matrix)
 {
-	(void) argc;
-	(void) argv;
-	return (0);
+	t_matrix_	*mat;
+
+	mat = matrix;
+	vec_destroy(mat->row0);
+	vec_destroy(mat->row1);
+	vec_destroy(mat->row2);
+	free(mat);
 }
