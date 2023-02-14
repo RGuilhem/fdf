@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/14 15:52:32 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/14 16:35:15 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ typedef void	t_matrix;
 
 typedef void	t_gui;
 typedef void	t_frame;
+
+typedef struct s_data
+{
+	t_gui	*gui;
+	t_map	*map;
+}				t_data;
 
 // files reading
 void			read_lines(const char *path, char ***lines);
@@ -70,6 +76,10 @@ void			matrix_destroy(t_matrix *matrix);
 // mlx helpers
 void			put_pixel(t_frame *frame, int x, int y, int color);
 t_gui			*gui_create(void);
+void			gui_run(t_gui *gui, t_map *map);
+void			gui_draw_map(t_gui *gui, t_map *map);
+void			gui_draw_settings(t_gui *gui);
+int				gui_draw_all(void *data);
 void			gui_destroy(t_gui *gui);
 
 #endif

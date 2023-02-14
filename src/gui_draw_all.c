@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   gui_draw_all.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 14:55:29 by graux             #+#    #+#             */
-/*   Updated: 2023/02/14 16:23:30 by graux            ###   ########.fr       */
+/*   Created: 2023/02/14 16:42:02 by graux             #+#    #+#             */
+/*   Updated: 2023/02/14 16:44:22 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
-#include <stdio.h>            //TODO remove
-#include <math.h>
 
-int	main(int argc, char *argv[])
+int	gui_draw_all(void *data)
 {
 	t_gui	*gui;
 	t_map	*map;
-	char	**lines;
-	int		i;
 
-	if (argc == 2)
-	{
-		read_lines(argv[1], &lines);
-		i = -1;
-		while (lines[++i])
-			printf("%s", lines[i]);
-		map = map_create(lines);
-		gui = gui_create();
-		gui_run(gui, map);
-	}
-	printf("here\n");
+	gui = ((t_data *) data)->gui;
+	map = ((t_data *) data)->map;
+	gui_draw_map(gui, map);
+	gui_draw_settings(gui);
 	return (0);
 }
