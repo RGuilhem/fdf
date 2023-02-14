@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/13 15:13:26 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/14 13:42:37 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef void	t_frame;
 char			**read_lines(const char *path);
 
 // Map
-t_map			*map_create(const char **map_lines);
+t_map			*map_create(char **map_lines);
 void			map_destroy(t_map *map);
 
 // Wireframe (wf)
@@ -69,7 +69,7 @@ void			matrix_destroy(t_matrix *matrix);
 
 // mlx helpers
 void			put_pixel(t_frame *frame, int x, int y, int color);
-t_gui			*gui_create(int width, int height);
+t_gui			*gui_create(void);
 void			gui_destroy(t_gui *gui);
 
 #endif

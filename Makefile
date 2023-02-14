@@ -10,6 +10,7 @@ SRC = main.c \
 	  vec_destroy.c \
 	  vec_multiply.c \
 	  matrix_create.c \
+	  gui_create.c \
 	  put_pixel.c
 SRC_DIR = $(addprefix src/, $(SRC))
 OBJ = ${SRC_DIR:.c=.o}
