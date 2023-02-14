@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/14 13:42:37 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/14 15:52:32 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef void	t_gui;
 typedef void	t_frame;
 
 // files reading
-char			**read_lines(const char *path);
+void			read_lines(const char *path, char ***lines);
 
 // Map
 t_map			*map_create(char **map_lines);
