@@ -6,14 +6,27 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 15:07:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/13 15:21:36 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/14 12:14:53 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/mlx.h"
 #include "../includes/_gui.h"
+#include "../includes/_frame.h"
 #include <stdlib.h>
+
+static void	gui_init_frames(t_gui_ *gui)
+{
+	t_frame_	*curr;
+
+	gui->frame_buffer[0] = malloc(sizeof(t_frame_));
+	gui->frame_buffer[1] = malloc(sizeof(t_frame_));
+	gui->frame_settings = malloc(sizeof(t_frame_));
+	curr = gui->frame_settings;
+	curr->address = mlx_get_data_addr(curr->img, &curr->bits_per_pixel,
+			&curr->line_length, &curr->endian);
+}
 
 t_gui	*gui_create(int width, int height)
 {
@@ -29,5 +42,6 @@ t_gui	*gui_create(int width, int height)
 	gui->x_angle = DEFAULT_X_ANGLE;
 	gui->y_angle = DEFAULT_Y_ANGLE;
 	gui->z_angle = DEFAULT_Z_ANGLE;
+	gui_init_frames(gui);
 	return (gui);
 }
