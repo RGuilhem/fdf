@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/15 15:48:59 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/15 16:57:51 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ t_matrix		*matrix_roty_create(float angle);
 t_matrix		*matrix_rotz_create(float angle);
 t_matrix		*matrix_scale_create(float scale_factor);
 void			matrix_destroy(t_matrix *matrix);
-//t_matrix		*matrix_multiply(t_matrix *a, t_matrix *b); TODO: not needed?
 
 // mlx helpers
 void			put_pixel(t_frame *frame, int x, int y, int color);

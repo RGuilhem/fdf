@@ -11,6 +11,7 @@ SRC = main.c \
 	  wf_copy.c \
 	  wf_scale.c \
 	  wf_transform.c \
+	  wf_translate.c \
 	  vec_add.c \
 	  vec_create.c \
 	  vec_destroy.c \
