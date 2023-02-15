@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:56:50 by graux             #+#    #+#             */
-/*   Updated: 2023/02/15 16:03:39 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/15 17:04:30 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ void	map_project(t_map *m, t_gui *g)
 	wf_transform(map->projected_wf, matrix_roty_create(gui->y_angle));
 	wf_transform(map->projected_wf, matrix_rotx_create(gui->x_angle));
 	wf_translate(map->projected_wf, gui->offset);
+	//TODO project;
 }

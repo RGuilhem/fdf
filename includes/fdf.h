@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/15 16:57:51 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/15 17:25:36 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define WIN_HEIGHT 1080
 # define WIN_WIDTH 1920
 # define SETTINGS_WIDTH 400
-# define DEFAULT_ZOOM 10
+# define DEFAULT_ZOOM 20
 # define DEFAULT_X_ANGLE 0.61547291
 # define DEFAULT_Y_ANGLE 0
 # define DEFAULT_Z_ANGLE 0.78539816
@@ -94,7 +94,7 @@ void			vec_multiply(t_vec *vec, t_matrix *matrix);
 t_matrix		*matrix_rotx_create(float angle);
 t_matrix		*matrix_roty_create(float angle);
 t_matrix		*matrix_rotz_create(float angle);
-t_matrix		*matrix_scale_create(float scale_factor);
+//t_matrix		*matrix_scale_create(float scale_factor);
 void			matrix_destroy(t_matrix *matrix);
 
 // mlx helpers
