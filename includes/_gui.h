@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:52:30 by graux             #+#    #+#             */
-/*   Updated: 2023/02/13 15:11:01 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/15 15:03:32 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_gui_
 	float	x_angle;
 	float	y_angle;
 	float	z_angle;
+	t_vec	*offset;
 	t_frame	*frame_buffer[2];
 	t_frame	*frame_settings;
 }				t_gui_;

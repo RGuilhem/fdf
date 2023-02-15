@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/14 16:35:15 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/15 15:14:44 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,30 @@
 # define WIN_WIDTH 1920
 # define SETTINGS_WIDTH 400
 # define DEFAULT_ZOOM 10
-# define DEFAULT_X_ANGLE 0.78539816
-# define DEFAULT_Y_ANGLE 0.78539816
-# define DEFAULT_Z_ANGLE 0
+# define DEFAULT_X_ANGLE 0.61547291
+# define DEFAULT_Y_ANGLE 0
+# define DEFAULT_Z_ANGLE 0.78539816
+
+// KEYS VALUE
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
+# define KEY_Q 12
+# define KEY_E 14
+
+# define KEY_H 4
+# define KEY_J 38
+# define KEY_K 40
+# define KEY_L 37
+
+# define KEY_P 35
+# define KEY_PLUS 69
+# define KEY_MINUS 78
+
+# define ZOOM_INC 0.5
+# define ANGLE_INC 0.03
+# define OFFSET_INC 5
 
 typedef void	t_map;
 typedef void	t_wf;

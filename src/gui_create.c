@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 15:07:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/14 13:36:14 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/15 15:05:09 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ t_gui	*gui_create(void)
 	gui->x_angle = DEFAULT_X_ANGLE;
 	gui->y_angle = DEFAULT_Y_ANGLE;
 	gui->z_angle = DEFAULT_Z_ANGLE;
+	gui->offset = vec_create(WIN_WIDTH / 3, WIN_HEIGHT / 3, 0);
 	gui_init_frames(gui);
 	return (gui);
 }
