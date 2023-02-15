@@ -6,7 +6,9 @@ SRC = main.c \
 	  error.c \
 	  read_lines.c \
 	  map_create.c \
+      map_project.c \
 	  wf_create.c \
+	  wf_copy.c \
 	  vec_add.c \
 	  vec_create.c \
 	  vec_destroy.c \

@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/15 15:40:34 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/15 15:48:59 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void			read_lines(const char *path, char ***lines);
 // Map
 t_map			*map_create(char **map_lines);
 void			map_destroy(t_map *map);
+void			map_project(t_map *map, t_gui *gui);
 
 // Wireframe (wf)
 t_wf			*wf_create(int point_width, int point_height);
