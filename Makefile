@@ -17,6 +17,7 @@ SRC = main.c \
 	  gui_draw_map.c \
 	  gui_draw_settings.c \
 	  gui_run.c \
+	  draw_line.c \
 	  put_pixel.c
 SRC_DIR = $(addprefix src/, $(SRC))
 OBJ = ${SRC_DIR:.c=.o}

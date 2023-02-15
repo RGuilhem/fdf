@@ -6,12 +6,14 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/15 15:14:44 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/15 15:40:34 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
+
+# include "_vec.h"
 
 // headers prefixed with _ should only be include if you know what you are
 // doing. Stick to the API defined here pls
@@ -76,6 +78,7 @@ void			wf_destroy(t_wf *wf);
 void			wf_scale(t_wf *wf, float scale_factor);
 void			wf_translate(t_wf *wf, t_vec *direction);
 void			wf_transform(t_wf *wf, t_matrix *transform);
+void			wf_copy(t_wf *dest, t_wf *src);
 
 // Vectors
 t_vec			*vec_create(float x, float y, float z);
@@ -102,5 +105,8 @@ void			gui_draw_map(t_gui *gui, t_map *map);
 void			gui_draw_settings(t_gui *gui);
 int				gui_draw_all(void *data);
 void			gui_destroy(t_gui *gui);
+
+// draw_line
+void			draw_line(t_frame *frame, t_vec_ *a, t_vec_ *b);
 
 #endif
