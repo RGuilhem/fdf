@@ -9,6 +9,7 @@ SRC = main.c \
       map_project.c \
 	  wf_create.c \
 	  wf_copy.c \
+	  wf_scale.c \
 	  vec_add.c \
 	  vec_create.c \
 	  vec_destroy.c \
