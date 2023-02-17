@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/17 14:25:51 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/17 15:06:43 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@
 # define KEY_PLUS 69
 # define KEY_MINUS 78
 
-# define ZOOM_INC 0.5
+# define ZOOM_INC 1
 # define ANGLE_INC 0.06
 # define OFFSET_INC 20
 
@@ -64,6 +64,12 @@ typedef struct s_data
 	t_gui	*gui;
 	t_map	*map;
 }				t_data;
+
+typedef enum e_projection
+{
+	ORTHOGRAPHIC = 0,
+	PROJ_SIZE,
+}			t_projection;
 
 // files reading
 void			read_lines(const char *path, char ***lines);
