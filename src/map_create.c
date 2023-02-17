@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:43:40 by graux             #+#    #+#             */
-/*   Updated: 2023/02/14 16:11:24 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/17 14:22:10 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static void	map_fill(t_map_ *map, char **map_lines)
 		line_split = ft_split(map_lines[i], ' ');
 		while (++j < map->width)
 		{
-			original_wf->points[i][j] = vec_create(i, j,
+			original_wf->points[i][j] = vec_create(j, i,
 					ft_atoi(line_split[j]));
 			projected_wf->points[i][j] = vec_create(0, 0, 0);
 		}

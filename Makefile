@@ -33,7 +33,7 @@ INCLUDES = -Iincludes/
 LIB = libft.a libmlx.a
 
 %.o: %.c
-	${CC} ${FLAGS} ${INCLUDES} -c $< -o $@ -g -fsanitize=address
+	${CC} ${FLAGS} ${INCLUDES} -c $< -o $@ -g
 
 all: ${NAME}
 
@@ -42,7 +42,7 @@ ${LIB}:
 	cd libft/ && make && cp -v libft.a ../
 
 $(NAME): ${LIB} $(OBJ)
-	$(CC) ${FLAGS} $(OBJ) -L. -lmlx -lm -lft -framework OpenGL -framework AppKit -o $(NAME) -g -fsanitize=address
+	$(CC) ${FLAGS} $(OBJ) -L. -lmlx -lm -lft -framework OpenGL -framework AppKit -o $(NAME) -g
 
 re: fclean all
 

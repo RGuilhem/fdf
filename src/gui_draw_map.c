@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:45:48 by graux             #+#    #+#             */
-/*   Updated: 2023/02/15 17:29:49 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/17 13:06:28 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 #include "../includes/_wf.h"
 #include "../includes/_frame.h"
 #include "../includes/mlx.h"
+
+static void	clear_frame(void *mlx, t_frame **frame)
+{
+	t_frame_	**fr;
+
+	fr = (t_frame_ **) frame;
+	mlx_destroy_image(mlx, (*fr)->img);
+	(*fr)->img = mlx_new_image(mlx, WIN_WIDTH, WIN_HEIGHT);
+	(*fr)->address = mlx_get_data_addr((*fr)->img, &(*fr)->bits_per_pixel,
+			&(*fr)->line_length, &(*fr)->endian);
+}
 
 static void	two_lines(t_vec_ i, t_wf_ *proj, t_frame_ *curr_fr)
 {
@@ -46,6 +57,6 @@ void	gui_draw_map(t_gui *gui, t_map *map)
 			two_lines(i, proj, curr_fr);
 	}
 	mlx_put_image_to_window(g->mlx, g->mlx_win, curr_fr->img, 0, 0);
-	//TODO: clear unused frame;
+	clear_frame(g->mlx, &g->frame_buffer[(f_counter + 1) % 2]);
 	f_counter++;
 }

@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/15 17:25:36 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/17 14:25:51 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@
 # define KEY_MINUS 78
 
 # define ZOOM_INC 0.5
-# define ANGLE_INC 0.03
-# define OFFSET_INC 5
+# define ANGLE_INC 0.06
+# define OFFSET_INC 20
 
 typedef void	t_map;
 typedef void	t_wf;
