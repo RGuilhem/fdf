@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/17 15:06:43 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/20 11:59:34 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ typedef struct s_data
 typedef enum e_projection
 {
 	ORTHOGRAPHIC = 0,
+	PERSPECTIVE,
 	PROJ_SIZE,
 }			t_projection;
 

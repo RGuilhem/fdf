@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:24:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/15 15:14:55 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/20 11:55:53 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ static int	hook_handler(int code, t_gui *gui)
 		offset->y -= OFFSET_INC;
 	else if (code == KEY_K)
 		offset->y += OFFSET_INC;
+	else if (code == 53)
+		exit(1);
 	hook_angle(code, gui);
 	return (0);
 }
