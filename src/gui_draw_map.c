@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:45:48 by graux             #+#    #+#             */
-/*   Updated: 2023/02/17 13:06:28 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/20 16:37:19 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	gui_draw_map(t_gui *gui, t_map *map)
 		while (++i.x < proj->width)
 			two_lines(i, proj, curr_fr);
 	}
-	mlx_put_image_to_window(g->mlx, g->mlx_win, curr_fr->img, 0, 0);
+	mlx_put_image_to_window(g->mlx, g->mlx_win, curr_fr->img, 0, 40);
 	clear_frame(g->mlx, &g->frame_buffer[(f_counter + 1) % 2]);
 	f_counter++;
 }

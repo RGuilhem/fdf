@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/20 11:59:34 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/20 16:35:22 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,18 @@
 # define KEY_P 35
 # define KEY_PLUS 69
 # define KEY_MINUS 78
+# define KEY_RESET 15
 
 # define ZOOM_INC 1
 # define ANGLE_INC 0.06
 # define OFFSET_INC 20
+
+# define HELP_TEXT_ROT "Rotations: x axis -> w/s | y axis a/d | z axis q/e | "
+# define HELP_TEXT_TRA "Transltations: hjkl | "
+# define HELP_TEXT_ZOOM "Zoom: +/- | "
+# define HELP_TEXT_PRO "Projection: p | "
+# define HELP_TEXT_COL "Color: c | "
+# define HELP_TEXT_RES "Reset: r"
 
 typedef void	t_map;
 typedef void	t_wf;

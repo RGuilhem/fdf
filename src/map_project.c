@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:56:50 by graux             #+#    #+#             */
-/*   Updated: 2023/02/20 11:38:49 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/20 17:02:57 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,32 @@
 #include "../includes/_gui.h"
 #include "../includes/_wf.h"
 #include "../includes/_vec.h"
+
+static void	map_apply_proj(t_gui_ *gui, t_map_ *map)
+{
+	int		i;
+	int		j;
+	t_wf_	*proj;
+	t_wf_	*orig;
+
+	proj = map->projected_wf;
+	orig = map->original_wf;
+	i = -1;
+	while (++i < map->height)
+	{
+		j = -1;
+		while (++j < map->width)
+		{
+			if (gui->proj != ORTHOGRAPHIC)
+			{
+				((t_vec_ *)proj->points[i][j])->x
+					*= 200 / ((t_vec_ *)proj->points[i][j])->z;
+				((t_vec_ *)proj->points[i][j])->z
+					*= 200 / ((t_vec_ *)proj->points[i][j])->z;
+			}
+		}
+	}
+}
 
 static void	map_center(t_gui_ *gui, t_map_ *map)
 {
@@ -49,4 +75,5 @@ void	map_project(t_map *m, t_gui *g)
 	matrix_destroy(mat_x);
 	matrix_destroy(mat_y);
 	matrix_destroy(mat_z);
+	map_apply_proj(gui, map);
 }

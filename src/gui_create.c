@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 15:07:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/17 14:30:53 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/20 16:42:50 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,9 @@ t_gui	*gui_create(void)
 	if (!gui)
 		return (NULL);
 	gui->mlx = mlx_init();
-	gui->mlx_win = mlx_new_window(gui->mlx, WIN_WIDTH + SETTINGS_WIDTH,
-			WIN_HEIGHT, "fdf");
+	gui->mlx_win = mlx_new_window(gui->mlx, WIN_WIDTH,
+			WIN_HEIGHT + 40, "fdf");
+	gui->proj = ORTHOGRAPHIC;
 	gui->zoom = DEFAULT_ZOOM;
 	gui->x_angle = DEFAULT_X_ANGLE;
 	gui->y_angle = DEFAULT_Y_ANGLE;
