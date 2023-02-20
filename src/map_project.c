@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:56:50 by graux             #+#    #+#             */
-/*   Updated: 2023/02/17 14:49:39 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/20 11:38:49 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	map_project(t_map *m, t_gui *g)
 	wf_transform(map->projected_wf, mat_y);
 	wf_transform(map->projected_wf, mat_x);
 	wf_translate(map->projected_wf, gui->offset);
-	//TODO project;
-	//TODO free the matrices;
+	matrix_destroy(mat_x);
+	matrix_destroy(mat_y);
+	matrix_destroy(mat_z);
 }
