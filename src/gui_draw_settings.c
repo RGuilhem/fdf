@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:49:03 by graux             #+#    #+#             */
-/*   Updated: 2023/02/17 13:29:07 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/21 15:01:36 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 #include "../includes/_gui.h"
 #include "../includes/_vec.h"
 #include "../includes/mlx.h"
-#include <stdio.h> //TODO remove
+//#include <stdio.h> //TODO remove
 
 void	gui_draw_settings(t_gui *gui)
 {
+	(void) gui;
+}
+/*
 	static int	i;
 	t_gui_		*settings;
 
@@ -32,4 +35,4 @@ void	gui_draw_settings(t_gui *gui)
 			((t_vec_ *) settings->offset)->y);
 	}
 	i++;
-}
+	*/

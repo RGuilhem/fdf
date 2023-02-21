@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:52:30 by graux             #+#    #+#             */
-/*   Updated: 2023/02/20 16:42:41 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/21 14:56:24 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ typedef struct s_gui_
 {
 	void	*mlx;
 	void	*mlx_win;
-	float	zoom;
 	float	x_angle;
 	float	y_angle;
 	float	z_angle;
 	int		proj;
+	t_vec	*zoom;
 	t_vec	*offset;
 	t_frame	*frame_buffer[2];
 	t_frame	*frame_settings;

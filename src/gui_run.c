@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:24:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/20 16:54:54 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/21 15:36:03 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,24 @@
 
 static void	gui_reset(t_gui_ *gui)
 {
+	t_vec_	*zoom;
+	t_vec_	*offset;
+
+	zoom = gui->zoom;
+	offset = gui->offset;
 	gui->x_angle = DEFAULT_X_ANGLE;
 	gui->y_angle = DEFAULT_Y_ANGLE;
 	gui->z_angle = DEFAULT_Z_ANGLE;
 	gui->proj = ORTHOGRAPHIC;
-	gui->zoom = DEFAULT_ZOOM;
+	zoom->x = DEFAULT_ZOOM;
+	zoom->y = DEFAULT_ZOOM;
+	zoom->z = DEFAULT_ZOOM;
+	offset->x = WIN_WIDTH / 2;
+	offset->y = WIN_HEIGHT / 2;
+	offset->z = 0;
 }
 
-static int	hook_angle(int code, t_gui *gui)
+static void	hook_angle(int code, t_gui *gui)
 {
 	t_gui_	*g;
 
@@ -47,7 +57,31 @@ static int	hook_angle(int code, t_gui *gui)
 		gui_reset(g);
 	if (code == KEY_P)
 		g->proj = (g->proj + 1) % 2;
-	return (0);
+}
+
+static void	handle_zoom(int code, t_gui *gui)
+{
+	t_gui_	*g;
+	t_vec_	*zoom;
+
+	g = gui;
+	zoom = g->zoom;
+	if (code == KEY_PLUS)
+	{
+		zoom->x += ZOOM_INC;
+		zoom->y += ZOOM_INC;
+		zoom->z += ZOOM_INC;
+	}
+	if (code == KEY_MINUS)
+	{
+		zoom->x -= ZOOM_INC;
+		zoom->y -= ZOOM_INC;
+		zoom->z -= ZOOM_INC;
+	}
+	if (code == KEY_Z_ZOOM_P)
+		zoom->z += ZOOM_INC;
+	if (code == KEY_Z_ZOOM_M)
+		zoom->z -= ZOOM_INC;
 }
 
 static int	hook_handler(int code, t_gui *gui)
@@ -57,10 +91,6 @@ static int	hook_handler(int code, t_gui *gui)
 
 	g = gui;
 	offset = g->offset;
-	if (code == KEY_PLUS)
-		g->zoom += ZOOM_INC;
-	if (code == KEY_MINUS)
-		g->zoom -= ZOOM_INC;
 	if (code == KEY_H)
 		offset->x += OFFSET_INC;
 	if (code == KEY_L)
@@ -71,7 +101,14 @@ static int	hook_handler(int code, t_gui *gui)
 		offset->y += OFFSET_INC;
 	if (code == 53)
 		exit(1);
+	if (code == KEY_ROT)
+	{
+		g->x_angle += ANGLE_INC / 3;
+		g->y_angle -= ANGLE_INC / 3;
+		g->z_angle += ANGLE_INC / 3;
+	}
 	hook_angle(code, gui);
+	handle_zoom(code, gui);
 	return (0);
 }
 

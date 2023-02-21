@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/20 16:35:22 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/21 15:32:10 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,11 @@
 # define KEY_MINUS 78
 # define KEY_RESET 15
 
-# define ZOOM_INC 1
+# define KEY_Z_ZOOM_P 16
+# define KEY_Z_ZOOM_M 17
+# define KEY_ROT 7
+
+# define ZOOM_INC 0.3
 # define ANGLE_INC 0.06
 # define OFFSET_INC 20
 
@@ -91,7 +95,7 @@ void			map_project(t_map *map, t_gui *gui);
 // Wireframe (wf)
 t_wf			*wf_create(int point_width, int point_height);
 void			wf_destroy(t_wf *wf);
-void			wf_scale(t_wf *wf, float scale_factor);
+void			wf_scale(t_wf *wf, t_vec *scale_factor);
 void			wf_translate(t_wf *wf, t_vec *direction);
 void			wf_transform(t_wf *wf, t_matrix *transform);
 void			wf_copy(t_wf *dest, t_wf *src);

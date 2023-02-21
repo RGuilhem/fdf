@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 15:07:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/20 16:42:50 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/21 14:59:33 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_gui	*gui_create(void)
 	gui->mlx_win = mlx_new_window(gui->mlx, WIN_WIDTH,
 			WIN_HEIGHT + 40, "fdf");
 	gui->proj = ORTHOGRAPHIC;
-	gui->zoom = DEFAULT_ZOOM;
+	gui->zoom = vec_create(DEFAULT_ZOOM, DEFAULT_ZOOM, DEFAULT_ZOOM);
 	gui->x_angle = DEFAULT_X_ANGLE;
 	gui->y_angle = DEFAULT_Y_ANGLE;
 	gui->z_angle = DEFAULT_Z_ANGLE;

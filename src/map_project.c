@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:56:50 by graux             #+#    #+#             */
-/*   Updated: 2023/02/20 17:02:57 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/21 15:13:42 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ static void	map_center(t_gui_ *gui, t_map_ *map)
 {
 	t_vec_	offset;
 
-	offset.x = -(map->width * gui->zoom / 2);
-	offset.y = -(map->height * gui->zoom / 2);
+	offset.x = -(map->width * ((t_vec_ *)gui->zoom)->x / 2);
+	offset.y = -(map->width * ((t_vec_ *)gui->zoom)->y / 2);
 	offset.z = 0;
 	wf_translate(map->projected_wf, &offset);
 }
