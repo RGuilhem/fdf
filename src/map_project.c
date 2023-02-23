@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:56:50 by graux             #+#    #+#             */
-/*   Updated: 2023/02/21 15:13:42 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/23 16:39:26 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 #include "../includes/_gui.h"
 #include "../includes/_wf.h"
 #include "../includes/_vec.h"
+#include <stdio.h> //TODO remove
 
+/*
 static void	map_apply_proj(t_gui_ *gui, t_map_ *map)
 {
 	int		i;
@@ -33,21 +35,18 @@ static void	map_apply_proj(t_gui_ *gui, t_map_ *map)
 		{
 			if (gui->proj != ORTHOGRAPHIC)
 			{
-				((t_vec_ *)proj->points[i][j])->x
-					*= 200 / ((t_vec_ *)proj->points[i][j])->z;
-				((t_vec_ *)proj->points[i][j])->z
-					*= 200 / ((t_vec_ *)proj->points[i][j])->z;
 			}
 		}
 	}
 }
+*/
 
 static void	map_center(t_gui_ *gui, t_map_ *map)
 {
 	t_vec_	offset;
 
 	offset.x = -(map->width * ((t_vec_ *)gui->zoom)->x / 2);
-	offset.y = -(map->width * ((t_vec_ *)gui->zoom)->y / 2);
+	offset.y = -(map->height * ((t_vec_ *)gui->zoom)->y / 2);
 	offset.z = 0;
 	wf_translate(map->projected_wf, &offset);
 }
@@ -75,5 +74,4 @@ void	map_project(t_map *m, t_gui *g)
 	matrix_destroy(mat_x);
 	matrix_destroy(mat_y);
 	matrix_destroy(mat_z);
-	map_apply_proj(gui, map);
 }
