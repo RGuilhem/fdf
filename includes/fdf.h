@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/21 15:32:10 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/24 13:17:56 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,12 @@ void			vec_multiply(t_vec *vec, t_matrix *matrix);
 t_matrix		*matrix_rotx_create(float angle);
 t_matrix		*matrix_roty_create(float angle);
 t_matrix		*matrix_rotz_create(float angle);
-//t_matrix		*matrix_scale_create(float scale_factor);
 void			matrix_destroy(t_matrix *matrix);
 
 // mlx helpers
 void			put_pixel(t_frame *frame, int x, int y, int color);
 t_gui			*gui_create(void);
+void			gui_destroy(t_gui *gui);
 void			gui_run(t_gui *gui, t_map *map);
 void			gui_draw_map(t_gui *gui, t_map *map);
 void			gui_draw_settings(t_gui *gui);

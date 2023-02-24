@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 15:07:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/21 14:59:33 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/24 13:25:17 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@ static void	gui_init_frames(t_gui_ *gui)
 			&curr->line_length, &curr->endian);
 	curr = gui->frame_buffer[1];
 	curr->img = mlx_new_image(gui->mlx, WIN_WIDTH, WIN_HEIGHT);
-	curr->address = mlx_get_data_addr(curr->img, &curr->bits_per_pixel,
-			&curr->line_length, &curr->endian);
-	curr = gui->frame_settings;
-	curr->img = mlx_new_image(gui->mlx, SETTINGS_WIDTH, WIN_HEIGHT);
 	curr->address = mlx_get_data_addr(curr->img, &curr->bits_per_pixel,
 			&curr->line_length, &curr->endian);
 }

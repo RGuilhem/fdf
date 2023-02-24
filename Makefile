@@ -21,6 +21,7 @@ SRC = main.c \
 	  matrix_create.c \
 	  matrix_destroy.c \
 	  gui_create.c \
+	  gui_destroy.c \
 	  gui_draw_all.c \
 	  gui_draw_map.c \
 	  gui_draw_settings.c \
