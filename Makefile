@@ -6,8 +6,10 @@ SRC = main.c \
 	  error.c \
 	  read_lines.c \
 	  map_create.c \
+	  map_destroy.c \
       map_project.c \
 	  wf_create.c \
+	  wf_destroy.c \
 	  wf_copy.c \
 	  wf_scale.c \
 	  wf_transform.c \
