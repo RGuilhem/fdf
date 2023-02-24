@@ -18,9 +18,10 @@ fdf
 *.gch
 *.pch
 
+libft.a
+
 # Libraries
 *.lib
-*.a
 *.la
 *.lo
 
