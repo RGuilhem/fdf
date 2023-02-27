@@ -1,4 +1,6 @@
+*.txt
 fdf
+
 *.swp
 # Prerequisites
 *.d
