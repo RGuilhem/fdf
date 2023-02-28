@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:24:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/27 20:02:46 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 11:29:38 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "../includes/_vec.h"
 #include "../includes/mlx.h"
 #include <stdlib.h>
-#include <stdio.h> //TODO remove
 
 static void	gui_reset(t_gui_ *gui)
 {
@@ -84,12 +83,12 @@ static void	handle_zoom(int code, t_gui *gui)
 		zoom->z -= ZOOM_INC;
 }
 
-static int	hook_handler(int code, t_gui *gui)
+static int	hook_handler(int code, t_data *data)
 {
 	t_gui_	*g;
 	t_vec_	*offset;
 
-	g = gui;
+	g = data->gui;
 	offset = g->offset;
 	if (code == KEY_H)
 		offset->x += OFFSET_INC;
@@ -100,15 +99,15 @@ static int	hook_handler(int code, t_gui *gui)
 	if (code == KEY_K)
 		offset->y += OFFSET_INC;
 	if (code == 53)
-		exit(1);
+		quit_program(data->gui, data->map);
 	if (code == KEY_ROT)
 	{
 		g->x_angle += ANGLE_INC / 3;
 		g->y_angle -= ANGLE_INC / 3;
 		g->z_angle += ANGLE_INC / 3;
 	}
-	hook_angle(code, gui);
-	handle_zoom(code, gui);
+	hook_angle(code, data->gui);
+	handle_zoom(code, data->gui);
 	return (0);
 }
 
@@ -126,7 +125,7 @@ void	gui_run(t_gui *gui, t_map *map)
 	mlx_string_put(g->mlx, g->mlx_win, 350, 8, 0xFF, HELP_TEXT_ROT
 		HELP_TEXT_TRA HELP_TEXT_ZOOM HELP_TEXT_PRO HELP_TEXT_COL
 		HELP_TEXT_RES);
-	mlx_hook(((t_gui_ *) gui)->mlx_win, 2, 0, hook_handler, gui);
+	mlx_hook(((t_gui_ *) gui)->mlx_win, 2, 0, hook_handler, data);
 	mlx_loop_hook(((t_gui_ *) gui)->mlx, gui_draw_all, data);
 	mlx_loop(((t_gui_ *) gui)->mlx);
 }

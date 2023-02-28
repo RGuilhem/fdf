@@ -3,6 +3,7 @@ FLAGS = -Wall -Wextra -Werror -O2 -g -fsanitize=address
 RM = rm -rf
 
 SRC = main.c \
+	  quit_program.c \
 	  read_lines.c \
 	  map_create.c \
 	  map_destroy.c \
