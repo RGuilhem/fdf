@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:54:21 by graux             #+#    #+#             */
-/*   Updated: 2023/02/28 10:53:06 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 13:44:41 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ static char	**add_line(char **lines, char *added_line)
 	static int		lines_number;
 	int				i;
 
+	if (!lines && lines_number != 0)
+		return (NULL);
 	new_lines = malloc(sizeof(char *) * (lines_number + 2));
+	if (!new_lines)
+		return (NULL);
 	i = -1;
 	while (++i < lines_number)
 		new_lines[i] = lines[i];
