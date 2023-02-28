@@ -3,7 +3,6 @@ FLAGS = -Wall -Wextra -Werror -O2
 RM = rm -rf
 
 SRC = main.c \
-	  error.c \
 	  read_lines.c \
 	  map_create.c \
 	  map_destroy.c \

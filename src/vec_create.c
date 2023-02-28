@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 15:16:16 by graux             #+#    #+#             */
-/*   Updated: 2023/02/10 16:34:34 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 10:47:34 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_vec	*vec_create(float x, float y, float z)
 
 	new_vec = malloc(sizeof(t_vec_));
 	if (!new_vec)
-		error_handler(CRASH, NULL, NULL);
+		return (NULL);
 	new_vec->x = x;
 	new_vec->y = y;
 	new_vec->z = z;
