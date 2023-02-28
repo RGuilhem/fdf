@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:42:02 by graux             #+#    #+#             */
-/*   Updated: 2023/02/15 15:48:40 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 10:43:08 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int	gui_draw_all(void *data)
 	map = ((t_data *) data)->map;
 	map_project(map, gui);
 	gui_draw_map(gui, map);
-	gui_draw_settings(gui);
 	return (0);
 }

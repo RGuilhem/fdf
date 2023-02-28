@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/24 13:17:56 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 10:42:46 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,6 @@ t_gui			*gui_create(void);
 void			gui_destroy(t_gui *gui);
 void			gui_run(t_gui *gui, t_map *map);
 void			gui_draw_map(t_gui *gui, t_map *map);
-void			gui_draw_settings(t_gui *gui);
 int				gui_draw_all(void *data);
 void			gui_destroy(t_gui *gui);
 
