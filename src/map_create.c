@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:43:40 by graux             #+#    #+#             */
-/*   Updated: 2023/02/28 11:23:36 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 13:31:05 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,16 @@ t_map	*map_create(char **map_lines)
 	t_map_	*map;
 
 	map = malloc(sizeof(t_map_));
+	if (!map)
+		return (NULL);
 	map_init_size(map_lines, map);
 	map->original_wf = wf_create(map->width, map->height);
 	map->projected_wf = wf_create(map->width, map->height);
+	if (!map->original_wf || !map->projected_wf)
+	{
+		map_destroy(map);
+		return (NULL);
+	}
 	map_fill(map, map_lines);
 	ft_printf("Map created successfuly\n");
 	return (map);

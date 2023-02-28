@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:26:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/28 13:10:55 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 13:31:42 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 int	quit_program(t_data *data)
 {
-	gui_destroy(data->gui);
-	map_destroy(data->map);
+	if (data->gui)
+		gui_destroy(data->gui);
+	if (data->map)
+		map_destroy(data->map);
 	exit(EXIT_SUCCESS);
 	return (0);
 }
