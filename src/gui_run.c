@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:24:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/28 11:29:38 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 13:10:14 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ static int	hook_handler(int code, t_data *data)
 	if (code == KEY_K)
 		offset->y += OFFSET_INC;
 	if (code == 53)
-		quit_program(data->gui, data->map);
+		quit_program(data);
 	if (code == KEY_ROT)
 	{
 		g->x_angle += ANGLE_INC / 3;
@@ -123,9 +123,9 @@ void	gui_run(t_gui *gui, t_map *map)
 	data->map = map;
 	g = gui;
 	mlx_string_put(g->mlx, g->mlx_win, 350, 8, 0xFF, HELP_TEXT_ROT
-		HELP_TEXT_TRA HELP_TEXT_ZOOM HELP_TEXT_PRO HELP_TEXT_COL
-		HELP_TEXT_RES);
+		HELP_TEXT_TRA HELP_TEXT_ZOOM HELP_TEXT_Z HELP_TEXT_RES);
 	mlx_hook(((t_gui_ *) gui)->mlx_win, 2, 0, hook_handler, data);
+	mlx_hook(((t_gui_ *) gui)->mlx_win, 17, 0, quit_program, data);
 	mlx_loop_hook(((t_gui_ *) gui)->mlx, gui_draw_all, data);
 	mlx_loop(((t_gui_ *) gui)->mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:53:08 by graux             #+#    #+#             */
-/*   Updated: 2023/02/28 11:26:36 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 13:10:47 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@
 # define HELP_TEXT_ROT "Rotations: x axis -> w/s | y axis a/d | z axis q/e | "
 # define HELP_TEXT_TRA "Transltations: hjkl | "
 # define HELP_TEXT_ZOOM "Zoom: +/- | "
+# define HELP_TEXT_Z "Z scaling: t/y | "
 # define HELP_TEXT_PRO "Projection: p | "
-# define HELP_TEXT_COL "Color: c | "
 # define HELP_TEXT_RES "Reset: r"
 
 typedef void	t_map;
@@ -124,7 +124,7 @@ void			gui_draw_map(t_gui *gui, t_map *map);
 int				gui_draw_all(void *data);
 void			gui_destroy(t_gui *gui);
 
-void			quit_program(t_gui *gui, t_map *map);
+int				quit_program(t_data *data);
 
 // draw_line
 void			draw_line(t_frame *frame, t_vec_ *a, t_vec_ *b);
