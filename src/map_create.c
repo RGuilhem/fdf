@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:43:40 by graux             #+#    #+#             */
-/*   Updated: 2023/02/28 10:49:50 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 10:56:05 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "../libft/includes/libft.h"
 #include "../includes/_wf.h"
 #include "../includes/_map.h"
-#include <stdio.h> //TODO remove
 
 static void	free_split(char **split)
 {
@@ -58,6 +57,7 @@ static int	map_init_size(char **map_lines, t_map_ *map)
 			map->width = split_size(split);
 		free_split(split);
 	}
+	ft_printf("size initialized\n");
 	return (1);
 }
 
@@ -69,6 +69,7 @@ static void	map_fill(t_map_ *map, char **map_lines)
 	t_wf_	*original_wf;
 	t_wf_	*projected_wf;
 
+	ft_printf("filling map\n");
 	i = -1;
 	original_wf = map->original_wf;
 	projected_wf = map->projected_wf;
@@ -84,6 +85,7 @@ static void	map_fill(t_map_ *map, char **map_lines)
 		}
 		free_split(line_split);
 	}
+	ft_printf("filling map\n");
 }
 
 t_map	*map_create(char **map_lines)
