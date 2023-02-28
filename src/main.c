@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:55:29 by graux             #+#    #+#             */
-/*   Updated: 2023/02/28 10:39:54 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 13:27:52 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char *argv[])
 {
 	t_gui	*gui;
 	t_map	*map;
+	t_data	data;
 	char	**lines;
 
 	if (argc == 2)
@@ -38,6 +39,10 @@ int	main(int argc, char *argv[])
 		map = map_create(lines);
 		free_lines(lines);
 		gui = gui_create();
+		data.gui = gui;
+		data.map = map;
+		if (!gui || !map)
+			quit_program(&data);
 		gui_run(gui, map);
 	}
 	return (0);
