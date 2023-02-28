@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:43:40 by graux             #+#    #+#             */
-/*   Updated: 2023/02/28 10:56:05 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/28 11:23:36 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,28 @@ static void	free_split(char **split)
 	free(split);
 }
 
-static int	split_size(char **split)
+static int	count_words(char *line)
 {
 	int	i;
+	int	count;
 
-	i = -1;
-	while (split[++i])
-		;
-	return (i);
+	count = 0;
+	i = 0;
+	while (line[i])
+	{
+		while (line[i] && line[i] == ' ')
+			i++;
+		count++;
+		while (line[i] && line[i] != ' ')
+			i++;
+	}
+	return (count);
 }
 
 static int	map_init_size(char **map_lines, t_map_ *map)
 {
 	int		i;
-	char	**split;
+	int		spaces;
 
 	if (!map_lines)
 		return (0);
@@ -47,17 +55,16 @@ static int	map_init_size(char **map_lines, t_map_ *map)
 	while (map_lines[++i])
 	{
 		map->height += 1;
-		split = ft_split(map_lines[i], ' ');
+		spaces = count_words(map_lines[i]);
 		if (i != 0)
 		{
-			if (split_size(split) != map->width)
+			if (spaces != map->width)
 				return (0);
 		}
 		else
-			map->width = split_size(split);
-		free_split(split);
+			map->width = spaces;
 	}
-	ft_printf("size initialized\n");
+	ft_printf("size initialized: %d %d\n", map->width, map->height);
 	return (1);
 }
 
@@ -85,7 +92,6 @@ static void	map_fill(t_map_ *map, char **map_lines)
 		}
 		free_split(line_split);
 	}
-	ft_printf("filling map\n");
 }
 
 t_map	*map_create(char **map_lines)

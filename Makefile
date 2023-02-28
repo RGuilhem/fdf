@@ -1,5 +1,5 @@
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -O2
+FLAGS = -Wall -Wextra -Werror -O2 -g -fsanitize=address
 RM = rm -rf
 
 SRC = main.c \
@@ -35,7 +35,7 @@ INCLUDES = -Iincludes/
 LIB = libft.a libmlx.a
 
 %.o: %.c
-	${CC} ${FLAGS} ${INCLUDES} -c $< -o $@ -g
+	${CC} ${FLAGS} ${INCLUDES} -c $< -o $@
 
 all: ${NAME}
 
@@ -44,7 +44,7 @@ ${LIB}:
 	cd libft/ && make && cp -v libft.a ../
 
 $(NAME): ${LIB} $(OBJ)
-	$(CC) ${FLAGS} $(OBJ) -L. -lmlx -lm -lft -framework OpenGL -framework AppKit -o $(NAME) -g
+	$(CC) ${FLAGS} $(OBJ) -L. -lmlx -lm -lft -framework OpenGL -framework AppKit -o $(NAME)
 
 re: fclean all
 
