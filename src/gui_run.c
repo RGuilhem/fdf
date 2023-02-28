@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:24:49 by graux             #+#    #+#             */
-/*   Updated: 2023/02/23 15:21:35 by graux            ###   ########.fr       */
+/*   Updated: 2023/02/27 20:02:46 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	handle_zoom(int code, t_gui *gui)
 		zoom->y += ZOOM_INC;
 		zoom->z += ZOOM_INC;
 	}
-	if (code == KEY_MINUS)
+	if (code == KEY_MINUS && zoom->x - ZOOM_INC > 0)
 	{
 		zoom->x -= ZOOM_INC;
 		zoom->y -= ZOOM_INC;
