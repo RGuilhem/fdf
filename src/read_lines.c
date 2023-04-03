@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:54:21 by graux             #+#    #+#             */
-/*   Updated: 2023/02/28 13:44:41 by graux            ###   ########.fr       */
+/*   Updated: 2023/04/03 13:12:07 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,4 @@ void	read_lines(const char *path, char ***lines)
 		read_line = get_next_line(fd);
 	}
 	close(fd);
-	ft_printf("Map file read done\n");
 }

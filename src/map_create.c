@@ -6,7 +6,7 @@
 /*   By: graux <graux@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:43:40 by graux             #+#    #+#             */
-/*   Updated: 2023/02/28 13:43:25 by graux            ###   ########.fr       */
+/*   Updated: 2023/04/03 13:15:45 by graux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ static int	map_init_size(char **map_lines, t_map_ *map)
 		else
 			map->width = spaces;
 	}
-	ft_printf("size initialized: %d %d\n", map->width, map->height);
 	return (1);
 }
 
@@ -76,7 +75,6 @@ static void	map_fill(t_map_ *map, char **map_lines)
 	t_wf_	*original_wf;
 	t_wf_	*projected_wf;
 
-	ft_printf("filling map\n");
 	i = -1;
 	original_wf = map->original_wf;
 	projected_wf = map->projected_wf;
@@ -98,6 +96,8 @@ t_map	*map_create(char **map_lines)
 {
 	t_map_	*map;
 
+	if (!map_lines)
+		return (NULL);
 	map = malloc(sizeof(t_map_));
 	if (!map)
 		return (NULL);
@@ -110,6 +110,5 @@ t_map	*map_create(char **map_lines)
 		return (NULL);
 	}
 	map_fill(map, map_lines);
-	ft_printf("Map created successfuly\n");
 	return (map);
 }
