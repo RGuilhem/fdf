@@ -41,7 +41,7 @@ LIB = libft.a libmlx.a
 all: ${NAME}
 
 ${LIB}:
-	cd libft/ && cp libmlx.a ../
+	cd mlx_mac && make && cp -v libmlx.a ../
 	cd libft/ && make && cp -v libft.a ../
 
 $(NAME): ${LIB} $(OBJ)
@@ -51,6 +51,7 @@ re: fclean all
 
 clean:
 	cd libft/ && make clean
+	cd mlx_mac/ && make clean
 	${RM} ${OBJ}
 
 fclean: clean
